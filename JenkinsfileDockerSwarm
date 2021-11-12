@@ -1,10 +1,10 @@
 node{
     stage("Git CheckOut"){
-        git url: 'https://github.com/simonLegah/UnityProject.git',branch: 'master'
+        git 'https://github.com/NBLB24/spring-boot-docker.git'
     }
     
     stage(" Maven Clean Package"){
-      def mavenHome =  tool name: "Maven-3.6.1", type: "maven"
+      def mavenHome =  tool name: "Maven-3.8.3", type: "maven"
       def mavenCMD = "${mavenHome}/bin/mvn"
       sh "${mavenCMD} clean package"
     } 
